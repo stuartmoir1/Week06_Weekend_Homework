@@ -1,0 +1,3 @@
+// Class
+public class Stock{
+}
