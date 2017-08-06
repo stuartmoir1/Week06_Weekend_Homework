@@ -2,7 +2,7 @@
 package instruments;
 import behaviours.*;
 
-public class Saxophone implements Playable{
+public class Saxophone extends Instrument implements Playable{
 
   // Instance variables.
   private String maker;
@@ -12,8 +12,7 @@ public class Saxophone implements Playable{
 
   // Constructor
   public Saxophone(String maker, String model, String body, String tuning){
-    this.maker = maker;
-    this.model = model;
+    super(maker, model);
     this.body = body;
     this.tuning = tuning;
   }
@@ -23,10 +22,6 @@ public class Saxophone implements Playable{
   // Method required by interface contract.
   public String play(){
     return "Toot toot!";
-  }
-
-  public String getMakeModel(){
-    return this.maker + " "  + this.model;
   }
 
   public String getBody(){

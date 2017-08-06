@@ -2,7 +2,7 @@
 package instruments;
 import behaviours.*;
 
-public class Guitar implements Playable{
+public class Guitar extends Instrument implements Playable{
   
   // Instance variables.
   private String maker;
@@ -12,8 +12,7 @@ public class Guitar implements Playable{
 
   // Constructor
   public Guitar(String maker, String model, int numStrings, int numPickups){
-    this.maker = maker;
-    this.model = model;
+    super(maker, model);
     this.numStrings = numStrings;
     this.numPickups = numPickups;
   }
@@ -23,10 +22,6 @@ public class Guitar implements Playable{
   // Method required by interface contract.
   public String play(){
     return "Twang!";
-  }
-
-  public String getMakeModel(){
-    return this.maker + " "  + this.model;
   }
 
   public int getNumStrings(){

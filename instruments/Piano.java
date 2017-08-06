@@ -2,7 +2,7 @@
 package instruments;
 import behaviours.*;
 
-public class Piano implements Playable{
+public class Piano extends Instrument implements Playable{
   
   // Instance variables.
   private String maker;
@@ -13,8 +13,7 @@ public class Piano implements Playable{
 
   // Constructor
   public Piano(String maker, String model, int height, int width, int depth){
-    this.maker = maker;
-    this.model = model;
+    super(maker, model);
     this.height = height;
     this.width = width;
     this.depth = depth;
@@ -25,10 +24,6 @@ public class Piano implements Playable{
   // Method required by interface contract.
   public String play(){
     return "Plinky plonk!";
-  }
-
-  public String getMakeModel(){
-    return this.maker + " "  + this.model;
   }
 
   public String getDimensions(){
