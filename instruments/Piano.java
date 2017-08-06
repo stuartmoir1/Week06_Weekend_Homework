@@ -2,7 +2,7 @@
 package instruments;
 import behaviours.*;
 
-public class Piano extends Instrument implements Playable{
+public class Piano extends Instrument implements Playable, Sellable{
   
   // Instance variables.
   private String maker;
@@ -10,10 +10,12 @@ public class Piano extends Instrument implements Playable{
   private int height;
   private int width;
   private int depth;
+  private int priceBuy;
+  private int priceSell;
 
   // Constructor
-  public Piano(String maker, String model, int height, int width, int depth){
-    super(maker, model);
+  public Piano(String maker, String model, int height, int width, int depth, int priceBuy,int priceSell){
+    super(maker, model, priceBuy, priceSell);
     this.height = height;
     this.width = width;
     this.depth = depth;
@@ -30,4 +32,7 @@ public class Piano extends Instrument implements Playable{
     return this.height + " " + this.width + " " + this.depth;
   }
 
+  public int calculateMarkup(){
+    return super.priceSell - super.priceBuy;
+  }
 }

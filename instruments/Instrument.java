@@ -1,21 +1,33 @@
 // Superclass
 package instruments;
 
-public class Instrument{
+public abstract class Instrument{
   
   // Instance variables.
-  private String maker;
-  private String model;
+  protected String maker;
+  protected String model;
+  protected int priceBuy;
+  protected int priceSell;
 
   // Constructor
-  public Instrument(String maker, String model){
+  public Instrument(String maker, String model, int priceBuy, int priceSell){
     this.maker = maker;
     this.model = model;
+    this.priceBuy = priceBuy;
+    this.priceSell = priceSell;
   }
 
   // Methods
 
   public String getMakeModel(){
     return this.maker + " "  + this.model;
+  }
+
+  public int getPriceBuy(){
+    return this.priceBuy;
+  }
+
+  public int getPriceSell(){
+    return this.priceSell;
   }
 }

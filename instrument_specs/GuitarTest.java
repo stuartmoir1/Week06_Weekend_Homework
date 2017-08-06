@@ -7,7 +7,7 @@ public class GuitarTest{
   Guitar guitar;
 
   @Before public void before(){
-    guitar = new Guitar("Fender", "Telecaster", 6, 2);
+    guitar = new Guitar("Fender", "Telecaster", 6, 2, 200, 250);
   }
 
   @Test public void getGuitarMakeModel(){
@@ -24,6 +24,18 @@ public class GuitarTest{
 
   @Test public void playGuitar(){
     assertEquals("Twang!", guitar.play());
+  }
+
+  @Test public void getGuitarPriceBuy(){
+    assertEquals(200, guitar.getPriceBuy());
+  }
+
+  @Test public void getGuitarPriceSell(){
+    assertEquals(250, guitar.getPriceSell());
+  }
+
+  @Test public void getGuitarMarkup(){
+    assertEquals(50, guitar.calculateMarkup());
   }
 
 }
