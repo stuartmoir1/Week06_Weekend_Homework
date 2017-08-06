@@ -1,6 +1,4 @@
 // Class
-// package instruments;
-// package accessories;
 import java.util.*;
 import behaviours.*;
 
@@ -30,5 +28,9 @@ public class Shop{
 
   public void remove(Sellable item){
     stock.remove(item);
+  }
+
+  public void clear(){
+    stock.clear();
   }
 }
