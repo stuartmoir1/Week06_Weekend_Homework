@@ -7,11 +7,19 @@ public class GuitarTest{
   Guitar guitar;
 
   @Before public void before(){
-    guitar = new Guitar("Fender", "Telecaster");
+    guitar = new Guitar("Fender", "Telecaster", 6, 2);
   }
 
-  @Test public void getGuitarDetails(){
-    assertEquals("Fender Telecaster", guitar.getDetails());
+  @Test public void getGuitarMakeModel(){
+    assertEquals("Fender Telecaster", guitar.getMakeModel());
+  }
+
+  @Test public void GetGuitarNumStrings(){
+    assertEquals(6, guitar.getNumStrings());
+  }
+
+  @Test public void GetGuitarNumPickups(){
+    assertEquals(2, guitar.getNumPickups());
   }
 
   @Test public void playGuitar(){

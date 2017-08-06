@@ -7,11 +7,19 @@ public class SaxophoneTest{
   Saxophone saxophone;
 
   @Before public void before(){
-    saxophone = new Saxophone("Startone", "SAS-75 Alto");
+    saxophone = new Saxophone("Startone", "SAS-75 Alto", "Brass", "Eb");
   }
 
-  @Test public void getSaxophoneDetails(){
-    assertEquals("Startone SAS-75 Alto", saxophone.getDetails());
+  @Test public void getSaxophoneMakeModel(){
+    assertEquals("Startone SAS-75 Alto", saxophone.getMakeModel());
+  }
+
+  @Test public void getSaxophoneBody(){
+    assertEquals("Brass", saxophone.getBody());
+  }
+
+  @Test public void getSaxophoneTuning(){
+    assertEquals("Eb", saxophone.getTuning());
   }
 
   @Test public void playSaxophone(){
